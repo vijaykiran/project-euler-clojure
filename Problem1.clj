@@ -9,15 +9,21 @@
 				(zero? (rem n 5)) true
 				:else false))
 
-(defn mysumall 
-  ([nums] (mysumall nums 0))
-	([nums sum]
-		(let [f (first nums)
-					r (rest nums)]
-				(if (zero? (count r))
-					(+ sum f)
-					(mysumall r (+ sum f))))))
+
+(apply + (filter divisible-by-3-5 (take 1000 ( range 1 1000))))
 
 
-(mysumall (filter divisible-by-3-5 (take 1000 ( range 1 1000))))
+;; mysumall - overr engineering due to ignorance :)
+
+; (defn mysumall 
+;   ([nums] (mysumall nums 0))
+; 	([nums sum]
+; 		(let [f (first nums)
+; 					r (rest nums)]
+; 				(if (zero? (count r))
+; 					(+ sum f)
+; 					(mysumall r (+ sum f))))))
+; 
+; 
+; (mysumall (filter divisible-by-3-5 (take 1000 ( range 1 1000))))
 
