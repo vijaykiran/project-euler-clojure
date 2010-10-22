@@ -4,5 +4,6 @@
 ;; Answer: 233168
 ;; 
 
-(apply + (distinct (concat (range 0 1000 5) (range 0 1000 3))))
+(reduce + (distinct (concat (range 0 1000 5) (range 0 1000 3))))
+
 
