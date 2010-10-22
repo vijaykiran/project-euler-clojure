@@ -2,6 +2,5 @@
 ;; The sum of these multiples is 23.
 ;; Find the sum of all the multiples of 3 or 5 below 1000.
 
-(apply + (filter #(cond (zero? (rem % 3)) true
-												(zero? (rem % 5)) true
-												:else false) (take 1000 (range 1 1000))))
+(apply + (distinct (flatten (cons (range 0 1000 5) (range 0 1000 3)))))
+
