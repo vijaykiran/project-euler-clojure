@@ -13,3 +13,6 @@
 
 ;; by manual trail & error found that 11 numbers are needed in the series
 (reduce + (take 11 (filter even? (fib-seq))))
+
+;;  Here's the one that is the real stuff :-)
+(reduce + (take-while #(< % 4000000) (filter even? (fib-seq))))
