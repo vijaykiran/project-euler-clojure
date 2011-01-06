@@ -8,24 +8,7 @@
 	(let [x (format "%d" n)]
 		(= x (apply str (reverse x)))))
 	
-
-(doseq [x (range 999 99 -1)]
-	(doseq [y (range 999 99 -1)]
-		(let [r (* x y)]
-			(if (palindrome? r) r))))
-			
-
-; Another silly way to loop multiplications, bigger numbers run forever
-(apply max (loop [ m '() x (range 1 11)]
-	(if (seq (rest x)) 
-			(recur (concat m 
-				(loop [n '() y (range 1 11)] 
-					(if (seq (rest y)) 
-						(recur (cons (* (first y) (first x)) n) (rest y)) 
-						n)))
-					(rest x))  m)))
-					
-					
-
-			
+(println 
+	(apply max (filter #(not (nil? %)) (distinct (for [i (range 999 99 -1) j (range 999 99 -1)] 
+		(if (palindrome? (* i j)) (* i j)))))))
 		
