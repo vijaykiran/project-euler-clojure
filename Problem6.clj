@@ -9,4 +9,10 @@
 ;; Find the difference between the sum of the squares of 
 ;; the first one hundred natural numbers and the square of the sum.
 
+;; brureforce
+
 (- (#(* % %) (reduce + (range 1 101))) (reduce + (map #(* % %) (range 1 101))))
+
+;; with some math :)
+
+(-  (#(* % %) (/ (* 100.0 101.0) 2.0)) (/ (* 201.0 101.0 100.0) 6.0))
